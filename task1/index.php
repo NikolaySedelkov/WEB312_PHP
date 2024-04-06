@@ -35,7 +35,7 @@
         ?>
     </h3>
     <h3>
-        even numbers: 
+        Even numbers: 
         <?php
             echo implode(', ', $even);
         ?>
@@ -45,6 +45,12 @@
     </h3>
     <h3>
         Min: <?php echo min($data);?>
+    </h3>
+    <h3>
+        Sorted: <?php
+            sort($data); 
+            echo implode(', ', $data);
+        ?>
     </h3>
 </body>
 </html>
