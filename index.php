@@ -19,6 +19,16 @@
 
 ?>
 
+<?php
+    // Объекты - ассоциативные массивы
+    // Для навигации по занятию | ключ[url-задачи] => значение[название задачи]
+    $obj = array(
+        "/task1" => "Задача#1",
+        "/task2" => "Задача#2",
+        "/task3" => "Задача#3"        
+    )
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,5 +46,21 @@
                 }
             ?>
         </select>
+        <hr/>
+        <?php
+            echo "
+                <ul>
+                    <li>
+                        <a href='/task1'>{$obj['/task1']}</a>
+                    </li>
+                    <li>
+                        <a href='/task2'>{$obj['/task2']}</a>
+                    </li>
+                    <li>
+                        <a href='/task3'>{$obj['/task3']}</a>
+                    </li>
+                </ul>
+            " 
+        ?>
     </body>
 </html>
