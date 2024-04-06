@@ -3,20 +3,20 @@
     $empty_arr = array(); // []
     // Заполненый массив
     // $fulled_arr[0] = 1; $fulled_arr[1] = 2; ... $fulled_arr[4] = 5;
-    $fulled_arr = array(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
+    $fulled_arr = array(1, 2, 3, 4); // [1, 2, 3, 4, 5]
 
     $options = ["Москва", "Санкт-петербург", "Воронеж", "Ялта"];
 
     $size_cities = count($options);
-    for($i = 0; $i < $size_cities; ++$i) {
-        $size_postfixs = count( $fulled_arr );
-        for($j = 0; $j < $size_cities; ++$j) {
-            array_push(
-                $options,
-                "$options[$i]-$fulled_arr[$j]"
-            );
+    
+    // Создать копию массива $copy_option = $options;
+    foreach($options as $city) {
+        foreach($fulled_arr as $postfix) {
+            array_push($options, "$city-$postfix");
         }
     }
+    // Для вывода массивов и объектов var_dump($copy_option);
+
 ?>
 
 
@@ -30,9 +30,9 @@
     <body>
         <select>
             <?php
-                $size_cities = count($options);
-                for($i = 0; $i < $size_cities; ++$i) {
-                    echo "<option>$options[$i]</option>";
+                // foreach($array as $iter)
+                foreach($options as $item_option ) {
+                    echo "<option>$item_option</option>";
                 }
             ?>
         </select>
