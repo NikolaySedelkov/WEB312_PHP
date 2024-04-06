@@ -47,20 +47,18 @@
             ?>
         </select>
         <hr/>
-        <?php
-            echo "
-                <ul>
-                    <li>
-                        <a href='/task1'>{$obj['/task1']}</a>
-                    </li>
-                    <li>
-                        <a href='/task2'>{$obj['/task2']}</a>
-                    </li>
-                    <li>
-                        <a href='/task3'>{$obj['/task3']}</a>
-                    </li>
-                </ul>
-            " 
-        ?>
+        <ul>
+            <?php
+                // array_keys - получить ключи массива
+                $keys_urls = array_keys($obj); 
+                foreach($keys_urls as $key) {
+                    echo "
+                        <li>
+                            <a href='$key'>{$obj[$key]}</a>
+                        </li>
+                    ";
+                }
+            ?>
+        </ul>
     </body>
 </html>
