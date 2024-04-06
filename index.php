@@ -49,11 +49,12 @@
         <hr/>
         <ul>
             <?php
-                // array_keys - получить ключи массива
-                foreach(array_keys($obj) as $key) {
+                // foreach - Для ассоциативных массивов
+                // foreach($object as $key => $value) $object[$key] === $value
+                foreach($obj as $key => $value) {
                     echo "
                         <li>
-                            <a href='$key'>{$obj[$key]}</a>
+                            <a href='$key'>{$value}</a>
                         </li>
                     ";
                 }
