@@ -21,9 +21,9 @@
     <h3>
         Input array: 
         <?php
-            foreach( $data as $number) {
-                echo "$number, ";
-            } 
+            // implode - с конкатенировать все элементы массива 
+            // implode(' | ', [1, 2, 3]) -> 1 | 2 | 3
+            echo implode(', ', $data);
         ?>
     </h3>
 </body>
