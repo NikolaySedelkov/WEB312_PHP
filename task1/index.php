@@ -9,16 +9,10 @@
 
     // a.
     $even = array();
-    // b
-    $min = PHP_INT_MAX;
-    $max = PHP_INT_MIN;
     foreach($data as $number) {
         if ($number % 2 === 0) {
             array_push($even, $number);
         }
-
-        if ($number > $max) $max = $number;
-        if ($number < $min) $min = $number;
     }
 ?>
 
@@ -47,10 +41,10 @@
         ?>
     </h3>
     <h3>
-        Max: <?php echo $max;?>
+        Max: <?php echo max($data);?>
     </h3>
     <h3>
-        Min: <?php echo $min;?>
+        Min: <?php echo min($data);?>
     </h3>
 </body>
 </html>
