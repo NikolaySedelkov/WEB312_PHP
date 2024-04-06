@@ -50,8 +50,7 @@
         <ul>
             <?php
                 // array_keys - получить ключи массива
-                $keys_urls = array_keys($obj); 
-                foreach($keys_urls as $key) {
+                foreach(array_keys($obj) as $key) {
                     echo "
                         <li>
                             <a href='$key'>{$obj[$key]}</a>
