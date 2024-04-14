@@ -13,6 +13,12 @@
     $task1 = new Task(); // были созданны 2 переменны $url и $title 
     $task1->url = '/task1';
     $task1->title = 'Задача#1';
+
+    $task2 = new Task(); // были созданны 2 переменны $url и $title 
+    $task2->url = '/task2';
+    $task2->title = 'Задача#2';
+
+    $tasks = array($task1, $task2);
 ?>
 
 
@@ -26,11 +32,14 @@
     <body>
         <ul>
         <?php
-            echo "
-                <li>
-                    <a href='$task1->url'>$task1->title</a>
-                </li>
-            "
+            foreach($tasks as $task) {
+                echo "
+                    <li>
+                        <a href='$task->url'>$task->title</a>
+                    </li>
+                ";
+            }
+            
         ?> 
         </ul>
     </body>
