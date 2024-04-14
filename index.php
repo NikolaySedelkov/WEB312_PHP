@@ -9,16 +9,17 @@
         public string $title;
     }
 
-    // Для создания объекта Task используется следущая запись 'new Task()'
-    $task1 = new Task(); // были созданны 2 переменны $url и $title 
-    $task1->url = '/task1';
-    $task1->title = 'Задача#1';
+    // Конструктор для создания задача : Возвращаемый тип - тип задачи (url,  title)
+    function contructorTask($url = '#', $title = 'NONAME') : Task {
+        // Для создания объекта Task используется следущая запись 'new Task()'
+        $temp = new Task();
+        $temp->url = $url;
+        $temp->title = $title;
 
-    $task2 = new Task(); // были созданны 2 переменны $url и $title 
-    $task2->url = '/task2';
-    $task2->title = 'Задача#2';
+        return $temp;
+    }
 
-    $tasks = array($task1, $task2);
+    $tasks = array(contructorTask("/task1", "Задача#1"), contructorTask("/task2", "Задача#2"));
 ?>
 
 
