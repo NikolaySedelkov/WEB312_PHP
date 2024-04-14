@@ -23,7 +23,7 @@
         }
     }
 
-    $tasks = array(new Task("/task1", "Задача#1"), new Task("/task2", "Задача#2"));
+    $tasks = array(new Task("/task1", "Практическая | Product"), new Task("/task2", "Задача#2"));
 ?>
 
 
