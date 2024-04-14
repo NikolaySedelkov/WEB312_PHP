@@ -7,19 +7,18 @@
         // Для создания шаблона указываются из каких полей будет состоять объект
         public string $url;
         public string $title;
+
+        // Конструктор для создания задача : Возвращаемый тип - тип задачи (url,  title)
+
+        // Это функция, которая принадлежит шаблону и предназачена для первичной инициализации объекта
+        //  при его создании 'new Task()'
+        public function __construct($url = '#', $title = 'NONAME') {
+            $this->url = $url;
+            $this->title = $title;
+        }
     }
 
-    // Конструктор для создания задача : Возвращаемый тип - тип задачи (url,  title)
-    function contructorTask($url = '#', $title = 'NONAME') : Task {
-        // Для создания объекта Task используется следущая запись 'new Task()'
-        $temp = new Task();
-        $temp->url = $url;
-        $temp->title = $title;
-
-        return $temp;
-    }
-
-    $tasks = array(contructorTask("/task1", "Задача#1"), contructorTask("/task2", "Задача#2"));
+    $tasks = array(new Task("/task1", "Задача#1"), new Task("/task2", "Задача#2"));
 ?>
 
 
@@ -40,7 +39,6 @@
                     </li>
                 ";
             }
-            
         ?> 
         </ul>
     </body>
