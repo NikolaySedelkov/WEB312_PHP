@@ -16,6 +16,11 @@
             $this->url = $url;
             $this->title = $title;
         }
+
+        // Функция которая принадлежит конкретному объекта класса(Метод)
+        public function Echo() {
+            echo "<a href='$this->url'>$this->title</a>";
+        }
     }
 
     $tasks = array(new Task("/task1", "Задача#1"), new Task("/task2", "Задача#2"));
@@ -33,11 +38,9 @@
         <ul>
         <?php
             foreach($tasks as $task) {
-                echo "
-                    <li>
-                        <a href='$task->url'>$task->title</a>
-                    </li>
-                ";
+                echo "<li>";
+                $task->Echo();
+                echo "</li>";
             }
         ?> 
         </ul>
