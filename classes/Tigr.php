@@ -20,5 +20,8 @@ class Tigr extends Animal {
         $this->age          = $age;
         $this->weight       = $weight;
         $this->velocity     = $velocity;
+                                // bin to hex
+        $this->id           = bin2hex(random_bytes(5));
+        // $this->diseases     = array('ветрянка', 'сколиоз'); ошибка
     }
 }
