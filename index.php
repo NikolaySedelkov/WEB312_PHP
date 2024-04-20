@@ -29,6 +29,23 @@
             <tr>    
                 <td>ID</td><td><?php echo $animal->getId();?></td>
             </tr>
+            <?php
+                $data = $animal->getDiseases();
+                $count_data = count($data);
+                echo "
+                    <tr>
+                        <td rolspan=$count_data>Болезни</td><td>{$data[0]}</td>
+                    </tr>
+                ";
+
+                for($i = 1; $i < count($data); ++$i) {
+                    echo "
+                    <tr>
+                        <td></td><td>{$data[$i]}</td>
+                    </tr>
+                ";
+                }
+            ?>
         </table>
 
         <table>
@@ -50,6 +67,7 @@
             <tr>    
                 <td>ID</td><td><?php echo $tigr->getId();?></td>
             </tr>
+            
         </table>
     </head>
     <body>

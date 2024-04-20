@@ -12,14 +12,19 @@ class Animal {
     private array $diseases;
 
     // конструктор - Инициализатор - инициализирует все поля класса
-    public function __construct(string $name, int $age, float $weight) {
+    public function __construct(
+        string  $name, 
+        int     $age, 
+        float   $weight, 
+        array   $diseases = array('ветрянка', 'сколиоз')
+    ) {
         // $name; - воспринимается как параметро функции, а не поля класса
         // для восприятия как поле класса нужно добавить $this-> : $this->name 
         $this->name     = $name;
         $this->age      = $age;
         $this->weight   = $weight;
 
-        $this->diseases = array('ветрянка', 'сколиоз');
+        $this->diseases = $diseases;
         $this->id = bin2hex(random_bytes(5));
     }
 
@@ -30,6 +35,10 @@ class Animal {
 
     public function getId() : string {
         return $this->id;
+    }
+
+    public function getDiseases() : array {
+        return $this->diseases;
     }
 
     protected function setId(string $newId) {
