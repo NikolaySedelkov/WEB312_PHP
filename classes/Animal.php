@@ -17,4 +17,7 @@ class Animal {
         $this->weight   = $weight;
     }
 
+    public function rename(string $newName) {
+        $this->name = $newName;
+    }
 }

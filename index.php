@@ -1,4 +1,6 @@
 <?php 
+    include('./classes/Animal.php');
+    include('./classes/Tigr.php');
 ?>
 
 <!DOCTYPE html>
