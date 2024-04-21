@@ -2,6 +2,13 @@
     include('./classes/Animal.php');
     include('./classes/Tigr.php');
 
+    include('./classes/abstract examples/geometry/Square.php');
+    include('./classes/abstract examples/geometry/Circle.php');
+
+    $shape = new Shape(100, 20);
+    $s = new Square(1, 1, 10);
+    $c = new Circle(2, 2, 5);
+
     $animal = new Animal("барсик", 4, 15.7);
     $tigr   = new Tigr("бобик", 20, 55.99, 112);
 ?>
@@ -11,7 +18,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title><?php echo $s->getX();?></title>
 
         <table>
             <caption>
