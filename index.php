@@ -1,9 +1,12 @@
 <?php 
-    include('./classes/Animal.php');
-    include('./classes/Tigr.php');
+    include("./classes/Category.php");
 
-    $animal = new Animal("барсик", 4, 15.7);
-    $tigr   = new Tigr("бобик", 20, 55.99, 112);
+    $list_category = array(
+        new Category("Gatgets"),
+        new Category("Холодильника"),
+        new Category("Телефоны"),
+        new Category("Стиральные машины"),
+    )
 ?>
 
 <!DOCTYPE html>
@@ -12,65 +15,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-
-        <table>
-            <caption>
-                Animal
-            </caption>
-            <tr>
-                <td>Имя</td><td><?php echo $animal->name;?></td>
-            </tr>
-            <tr>
-                <td>Возраст</td><td><?php echo $animal->age;?></td>
-            </tr>
-            <tr>    
-                <td>Вес</td><td><?php echo $animal->weight;?></td>
-            </tr>
-            <tr>    
-                <td>ID</td><td><?php echo $animal->getId();?></td>
-            </tr>
-            <?php
-                $data = $animal->getDiseases();
-                $count_data = count($data);
-                echo "
-                    <tr>
-                        <td rolspan=$count_data>Болезни</td><td>{$data[0]}</td>
-                    </tr>
-                ";
-
-                for($i = 1; $i < count($data); ++$i) {
-                    echo "
-                    <tr>
-                        <td></td><td>{$data[$i]}</td>
-                    </tr>
-                ";
-                }
-            ?>
-        </table>
-
-        <table>
-            <caption>
-                Tigr
-            </caption>
-            <tr>
-                <td>Имя</td><td><?php echo $tigr->name;?></td>
-            </tr>
-            <tr>
-                <td>Возраст</td><td><?php echo $tigr->age;?></td>
-            </tr>
-            <tr>    
-                <td>Вес</td><td><?php echo $tigr->weight;?></td>
-            </tr>
-            <tr>    
-                <td>Скорость</td><td><?php echo $tigr->velocity;?></td>
-            </tr>
-            <tr>    
-                <td>ID</td><td><?php echo $tigr->getId();?></td>
-            </tr>
-            
-        </table>
     </head>
     <body>
-        
+        <ul>
+            <?php
+                foreach($list_category as $category) {
+                    echo "<li>$category->name</li>";
+                } 
+            ?>
+        </ul>
+        <hr/>
+        <form>
+            <input placeholder="Новая категория" type="text" name="category"/>
+            <button>Add</button>
+        </form>
     </body>
 </html>
