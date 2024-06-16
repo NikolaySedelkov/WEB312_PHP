@@ -11,6 +11,11 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
+    public function panel() {
+        return view('admin.panel');
+    }
+
+
     public function auth(Request $request) {
         /*
         Регистрация
