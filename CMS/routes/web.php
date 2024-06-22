@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\AdminController;
+use App\Models\Phone;
 
 Route::get('/', function () {
     return view('welcome');

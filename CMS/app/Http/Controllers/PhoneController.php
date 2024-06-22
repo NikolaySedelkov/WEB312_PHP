@@ -42,8 +42,4 @@ class PhoneController extends Controller
     function form(Phone $phone) {
         return view('phone.updateOrCreate', ['data' => $phone]);
     }
-
-    public function viewContentManager(){
-        return view('phone.content-managment');
-    }
 }
